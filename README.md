@@ -1,3 +1,14 @@
+# gdtt
+
+Garage Door Telemetry Transport, or rather an MQTT garage door controller. This is based heavily on `GarageQTPi` (see below verbatim `README`) with a few changes:
+
+- [ ] Uses `libgpiod` so it's more generic than just Raspberry Pi. This does mean that (unless using `libgpiod >= 1.5` with Linux Kernel >= 5.5) you cannot use the internal pull-up resistors. Also, no built-in software debouncing
+- [ ] Two sensors per door to detect open and closed doors reliably; also reworked logic on door state using this
+- [ ] MQTTS support, including client certificates
+- [ ] Python 3
+
+The modified code isn't necessarily tested with below hardware design, as my implementation is running on a Banana Pi P2-Zero and might use external pull-up resistors and a hardware debouncing circuit if needed.
+
 ## What is GarageQTPi
 
 GarageQTPi is an implementation that provides methods to communicate with a Raspberry Pi garage door opener via the MQTT protocol.
